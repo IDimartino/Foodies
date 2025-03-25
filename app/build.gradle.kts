@@ -10,11 +10,11 @@ android {
     compileSdk = ProjectConfig.compileSdk
 
     defaultConfig {
-        applicationId = ProjectConfig.appId
-        minSdk = ProjectConfig.minSdk
-        targetSdk = ProjectConfig.targetSdk
-        versionCode = ProjectConfig.versionCode
-        versionName = ProjectConfig.versionName
+        applicationId = libs.versions.appId.get()
+        minSdk = libs.versions.android.minSdk.get().toInt()
+        targetSdk = libs.versions.android.targetSdk.get().toInt()
+        versionCode = libs.versions.android.versionCode.get().toInt()
+        versionName = libs.versions.android.versionName.get()
 
         testInstrumentationRunner = "com.foodies.app.HiltTestRunner"
         vectorDrawables {
@@ -38,7 +38,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeCompilerVersion
+        kotlinCompilerExtensionVersion = libs.versions.composeCompiler.get()
     }
     packaging {
         resources {
@@ -51,64 +51,68 @@ android {
 
 dependencies {
 
-    implementation(Compose.compiler)
-    implementation(Compose.ui)
-    implementation(Compose.uiToolingPreview)
-    implementation(Compose.hiltNavigationCompose)
-    implementation(Compose.material)
-    implementation(Compose.runtime)
-    implementation(Compose.navigation)
-    implementation(Compose.viewModelCompose)
-    implementation(Compose.activityCompose)
-    implementation(Compose.composeIcons)
+    implementation(libs.compose.compiler)
+    implementation(libs.compose.ui)
+    implementation(libs.compose.uiToolingPreview)
+    implementation(libs.compose.hiltNavigationCompose)
+    implementation(libs.compose.material)
+    implementation(libs.compose.runtime)
+    implementation(libs.compose.navigation)
+    implementation(libs.compose.viewModelCompose)
+    implementation(libs.compose.activityCompose)
+    implementation(libs.compose.composeIcons)
 
-    implementation(DaggerHilt.hiltAndroid)
-    kapt(DaggerHilt.hiltCompiler)
+    implementation(libs.hilt.hiltAndroid)
+    kapt(libs.hilt.hiltCompiler)
 
-    implementation(project(Modules.core))
-    implementation(project(Modules.coreUi))
-    implementation(project(Modules.onboardingPresentation))
-    implementation(project(Modules.onboardingDomain))
-    implementation(project(Modules.trackerPresentation))
-    implementation(project(Modules.trackerDomain))
-    implementation(project(Modules.trackerData))
+    implementation(project(":core"))
+    implementation(project(":core-ui"))
+    implementation(project(":onboarding:onboarding_presentation"))
+    implementation(project(":onboarding:onboarding_domain"))
+    implementation(project(":home:home_presentation"))
+    implementation(project(":home:home_domain"))
+    implementation(project(":home:home_data"))
 
-    implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appCompat)
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.activity.ktx)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    implementation(Coil.coilCompose)
+    implementation(libs.coil.coilCompose)
 
-    implementation(Google.material)
+    implementation(libs.google.material)
 
-    implementation(Retrofit.okHttp)
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.okHttpLoggingInterceptor)
-    implementation(Retrofit.moshiConverter)
+    implementation(libs.retrofit.okHttp)
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.okHttpLoggingInterceptor)
+    implementation(libs.retrofit.moshiConverter)
 
-    kapt(Room.roomCompiler)
-    implementation(Room.roomKtx)
-    implementation(Room.roomRuntime)
+    kapt(libs.room.roomCompiler)
+    implementation(libs.room.roomKtx)
+    implementation(libs.room.roomRuntime)
 
-    implementation(Google.accompanist)
+    implementation(libs.google.accompanist)
 
-    testImplementation(Testing.junit4)
-    testImplementation(Testing.junitAndroidExt)
-    testImplementation(Testing.truth)
-    testImplementation(Testing.coroutines)
-    testImplementation(Testing.turbine)
-    testImplementation(Testing.composeUiTest)
-    testImplementation(Testing.mockk)
-    testImplementation(Testing.mockWebServer)
+    implementation(libs.coroutines.coroutines)
 
-    androidTestImplementation(Testing.junit4)
-    androidTestImplementation(Testing.junitAndroidExt)
-    androidTestImplementation(Testing.truth)
-    androidTestImplementation(Testing.coroutines)
-    androidTestImplementation(Testing.turbine)
-    androidTestImplementation(Testing.composeUiTest)
-    androidTestImplementation(Testing.mockkAndroid)
-    androidTestImplementation(Testing.mockWebServer)
-    androidTestImplementation(Testing.hiltTesting)
-    kaptAndroidTest(DaggerHilt.hiltCompiler)
-    androidTestImplementation(Testing.testRunner)
+    testImplementation(libs.testing.junit4)
+    testImplementation(libs.testing.junitAndroidExt)
+    testImplementation(libs.testing.truth)
+    testImplementation(libs.testing.coroutines)
+    testImplementation(libs.testing.turbine)
+    testImplementation(libs.compose.uiTest)
+    testImplementation(libs.testing.mockk)
+    testImplementation(libs.testing.mockWebServer)
+
+    androidTestImplementation(libs.testing.junit4)
+    androidTestImplementation(libs.testing.junitAndroidExt)
+    androidTestImplementation(libs.testing.truth)
+    androidTestImplementation(libs.testing.coroutines)
+    androidTestImplementation(libs.testing.turbine)
+    androidTestImplementation(libs.compose.uiTest)
+    androidTestImplementation(libs.testing.mockkAndroid)
+    androidTestImplementation(libs.testing.mockWebServer)
+    androidTestImplementation(libs.testing.hiltTesting)
+    kaptAndroidTest(libs.hilt.hiltCompiler)
+    androidTestImplementation(libs.testing.testRunner)
 }

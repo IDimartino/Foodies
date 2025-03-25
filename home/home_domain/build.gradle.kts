@@ -10,6 +10,6 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(Coroutines.coroutines)
+    implementation(project(":core"))
+    implementation(libs.coroutines.coroutines)
 }

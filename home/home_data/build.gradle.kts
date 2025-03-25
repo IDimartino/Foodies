@@ -9,16 +9,18 @@ android {
     namespace = "com.foodies.home_data"
 }
 
+
 dependencies {
-    implementation(project(Modules.core))
-    implementation(project(Modules.trackerDomain))
+    implementation(project(":core"))
+    implementation(project(":home:home_domain"))
 
-    implementation(Retrofit.okHttp)
-    implementation(Retrofit.retrofit)
-    implementation(Retrofit.okHttpLoggingInterceptor)
-    implementation(Retrofit.moshiConverter)
+    implementation(libs.retrofit.okHttp)
+    implementation(libs.retrofit.retrofit)
+    implementation(libs.retrofit.okHttpLoggingInterceptor)
+    implementation(libs.retrofit.moshiConverter)
 
-    "kapt"(Room.roomCompiler)
-    implementation(Room.roomKtx)
-    implementation(Room.roomRuntime)
+    "kapt"(libs.room.roomCompiler)
+    implementation(libs.room.roomKtx)
+    implementation(libs.room.roomRuntime)
+    implementation(libs.coroutines.coroutines)
 }

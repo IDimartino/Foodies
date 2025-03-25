@@ -31,25 +31,24 @@ android {
 }
 
 dependencies {
-    kapt DaggerHilt.hiltCompiler
-    implementation DaggerHilt.hiltAndroid
+    kapt(libs.hilt.hiltCompiler)
+    implementation(libs.hilt.hiltAndroid)
 
-    testImplementation Testing.junit4
-    testImplementation Testing.junitAndroidExt
-    testImplementation Testing.truth
-    testImplementation Testing.coroutines
-    testImplementation Testing.turbine
-    testImplementation Testing.composeUiTest
-    testImplementation Testing.mockk
-    testImplementation Testing.mockWebServer
+    testImplementation(libs.testing.junit4)
+    testImplementation(libs.testing.junitAndroidExt)
+    testImplementation(libs.testing.truth)
+    testImplementation(libs.testing.coroutines)
+    testImplementation(libs.testing.turbine)
+    testImplementation(libs.compose.uiTest)
+    testImplementation(libs.testing.mockk)
+    testImplementation(libs.testing.mockWebServer)
 
-    androidTestImplementation Testing.junit4
-    androidTestImplementation Testing.junitAndroidExt
-    androidTestImplementation Testing.truth
-    androidTestImplementation Testing.coroutines
-    androidTestImplementation Testing.turbine
-    androidTestImplementation Testing.composeUiTest
-    androidTestImplementation Testing.mockk
-    androidTestImplementation Testing.mockWebServer
-    androidTestImplementation Testing.hiltTesting
+    androidTestImplementation(libs.testing.junit4)
+    androidTestImplementation(libs.testing.junitAndroidExt)
+    androidTestImplementation(libs.testing.truth)
+    androidTestImplementation(libs.testing.coroutines)
+    androidTestImplementation(libs.testing.turbine)
+    androidTestImplementation(libs.compose.uiTest)
+    androidTestImplementation(libs.testing.mockWebServer)
+    androidTestImplementation(libs.testing.hiltTesting)
 }

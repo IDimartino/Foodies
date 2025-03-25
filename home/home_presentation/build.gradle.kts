@@ -10,15 +10,14 @@ android {
 }
 
 dependencies {
-    implementation(project(Modules.core))
-    implementation(project(Modules.coreUi))
-    implementation(project(Modules.trackerDomain))
+    implementation(project(":core"))
+    implementation(project(":core-ui"))
+    implementation(project(":home:home_domain"))
 
-    implementation(Coil.coilCompose)
-    implementation(CameraX.cameraCore)
-    implementation(CameraX.cameraCamera2)
-    implementation(CameraX.cameraView)
-    implementation(CameraX.cameraLifecycle)
-    implementation(Google.accompanist)
-    implementation("androidx.camera:camera-view:1.4.1")
+    implementation(libs.coil.coilCompose)
+    implementation(libs.camerax.cameraCore)
+    implementation(libs.camerax.cameraCamera2)
+    implementation(libs.camerax.cameraView)
+    implementation(libs.camerax.cameraLifecycle)
+    implementation(libs.google.accompanist)
 }
