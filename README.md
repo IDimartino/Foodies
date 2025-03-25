@@ -32,6 +32,7 @@
     *   Jetpack Compose
 *   **Architectural Pattern:**
     *   MVVM (Model-View-ViewModel)
+    *   Clean Architecture, Multi-Module Architecture, SOLID Principles
 *   **Libraries & Tools:**
     *   Retrofit - For making network requests (e.g., to a backend API).
     *   Coil - For loading and displaying images efficiently.
@@ -49,5 +50,6 @@ This is a prototype, and there are many potential areas for future development, 
 *   **User Authentication:** Implementing user login and registration.
 *   **Search:** Improving the search functionality.
 *   **Notifications:** Adding notifications.
-*   **Social features:** Add the likes and comments features.
+*   **Social features:** Add the likes, comments features, sharing macros.
+*   **Improve UI:** Improving the user interface.
 *   **Add Unit Test:** Add tests to make sure of the quality of the code.
