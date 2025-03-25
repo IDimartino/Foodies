@@ -56,6 +56,7 @@ fun PreviewScreen(
         Button(
             onClick = {
                 Toast.makeText(context, "$messsage $comment", Toast.LENGTH_SHORT).show()
+                onShare()
             },
             modifier = Modifier.padding(16.dp)
         ) {

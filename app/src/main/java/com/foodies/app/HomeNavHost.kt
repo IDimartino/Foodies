@@ -145,7 +145,10 @@ fun HomeNavHost(
                 val encodedFilePath = backStackEntry.arguments?.getString("filePath") ?: ""
                 val filePath = URLDecoder.decode(encodedFilePath, "UTF-8")
                 PreviewScreen(filePath, {
-                    navController.navigate(BottomNavItem.Feed.route)
+                    navController.popBackStack(
+                        route = BottomNavItem.Feed.route,
+                        inclusive = false
+                    )
                 })
             }
             composable(BottomNavItem.Tracker.route) {
