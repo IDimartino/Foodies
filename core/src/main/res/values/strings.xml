@@ -10,6 +10,7 @@
     <!-- Buttons -->
     <string name="start">Start</string>
     <string name="next">Next</string>
+    <string name="done">Done.</string>
     <string name="share">Share!</string>
     <string name="lets_go">Let\'s go</string>
 

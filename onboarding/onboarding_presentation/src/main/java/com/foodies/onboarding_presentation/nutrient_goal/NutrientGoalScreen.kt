@@ -83,7 +83,7 @@ fun NutrientGoalScreen(
             )
         }
         ActionButton(
-            text = stringResource(id = com.foodies.core.R.string.next),
+            text = stringResource(id = com.foodies.core.R.string.done),
             onClick = {
                 viewModel.onEvent(NutrientGoalEvent.OnNextClick)
             },
