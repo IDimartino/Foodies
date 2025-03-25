@@ -59,7 +59,7 @@
     <!-- ==================================================================================================== -->
 
     <!-- Camera -->
-    <string name="preview_posted_message">Posted with comment:</string>
+    <string name="preview_posted_message">Shared!</string>
     <string name="preview_add_comment">Add a comment</string>
 
     <!-- Journal -->

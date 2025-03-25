@@ -31,7 +31,7 @@ fun PreviewScreen(
     var comment by remember { mutableStateOf("") }
     val context = LocalContext.current
 
-    val messsage = stringResource(com.foodies.core.R.string.preview_posted_message)
+    val message = stringResource(com.foodies.core.R.string.preview_posted_message)
 
     Column(
         modifier = Modifier.fillMaxSize(),
@@ -55,7 +55,7 @@ fun PreviewScreen(
         // Post button
         Button(
             onClick = {
-                Toast.makeText(context, "$messsage $comment", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, message, Toast.LENGTH_SHORT).show()
                 onShare()
             },
             modifier = Modifier.padding(16.dp)
