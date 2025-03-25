@@ -19,6 +19,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -65,7 +66,7 @@ fun ProfileContent(userInfo: UserInfo?) {
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
             ProfileCard(userInfo)
         } else {
-            Text(text = "No User Data", textAlign = TextAlign.Center)
+            Text(text = stringResource(com.foodies.core.R.string.profil_title_nodata), textAlign = TextAlign.Center)
         }
     }
 }
@@ -81,29 +82,29 @@ fun ProfileCard(userInfo: UserInfo) {
             .padding(spacing.spaceMedium)
     ) {
         Text(
-            text = "About me",
+            text = stringResource(com.foodies.core.R.string.profil_title_infos),
             color = MaterialTheme.colors.onPrimary,
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(spacing.spaceSmall))
-        UserInfoRow(title = "Age", value = userInfo.age.toString())
-        UserInfoRow(title = "Gender", value = userInfo.gender.name)
-        UserInfoRow(title = "Height", value = "${userInfo.height} cm")
-        UserInfoRow(title = "Weight", value = "${userInfo.weight} kg")
-        UserInfoRow(title = "Goal", value = userInfo.goalType.name)
-        UserInfoRow(title = "Activity", value = userInfo.activityLevel.name)
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_age), value = userInfo.age.toString())
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_gender), value = userInfo.gender.name)
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_height), value = "${userInfo.height} cm")
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_weight), value = "${userInfo.weight} kg")
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_goal), value = userInfo.goalType.name)
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_activity), value = userInfo.activityLevel.name)
         Spacer(modifier = Modifier.height(spacing.spaceMedium))
         Text(
-            text = "Nutrient Ratio",
+            text = stringResource(com.foodies.core.R.string.profil_title_nutrients),
             color = MaterialTheme.colors.onPrimary,
             style = MaterialTheme.typography.h6,
             fontWeight = FontWeight.Bold
         )
         Spacer(modifier = Modifier.height(spacing.spaceSmall))
-        UserInfoRow(title = "Carbs", value = "${(userInfo.carbRatio*100).toInt()}%")
-        UserInfoRow(title = "Protein", value = "${(userInfo.proteinRatio*100).toInt()}%")
-        UserInfoRow(title = "Fat", value = "${(userInfo.fatRatio*100).toInt()}%")
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_carbs), value = "${(userInfo.carbRatio*100).toInt()}%")
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_protein), value = "${(userInfo.proteinRatio*100).toInt()}%")
+        UserInfoRow(title = stringResource(com.foodies.core.R.string.profil_title_fat), value = "${(userInfo.fatRatio*100).toInt()}%")
     }
 }
 

@@ -7,29 +7,27 @@ import androidx.camera.core.ImageCaptureException
 import androidx.camera.core.Preview
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.camera.view.PreviewView
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.Icon
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.SwitchCamera
-import androidx.compose.runtime.*
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.content.ContextCompat
+import com.foodies.home_presentation.camera_view.components.CameraButton
+import com.foodies.home_presentation.camera_view.components.CaptureButton
 import java.io.File
-
 
 @Composable
 fun CameraView(
@@ -37,7 +35,7 @@ fun CameraView(
     onCameraClosed: () -> Unit
 ) {
     val context = LocalContext.current
-    val lifecycleOwner = LocalLifecycleOwner.current
+    val lifecycleOwner = androidx.lifecycle.compose.LocalLifecycleOwner.current
     var lensFacing by remember { mutableStateOf(CameraSelector.LENS_FACING_BACK) }
     val previewView = remember { PreviewView(context) }
     val cameraProviderFuture = remember { ProcessCameraProvider.getInstance(context) }
@@ -48,7 +46,7 @@ fun CameraView(
     LaunchedEffect(lensFacing) {
         cameraProvider = cameraProviderFuture.get()
         val preview = Preview.Builder().build().also {
-            it.setSurfaceProvider(previewView.surfaceProvider)
+            it.surfaceProvider = previewView.surfaceProvider
         }
         val imageCaptureInstance = ImageCapture.Builder().build()
         imageCapture = imageCaptureInstance
@@ -98,8 +96,7 @@ fun CameraView(
                     object : ImageCapture.OnImageSavedCallback {
                         override fun onImageSaved(outputFileResults: ImageCapture.OutputFileResults) {
                             val filePath = file.absolutePath
-                            onPhotoTaken(filePath) // Trigger navigation to preview
-                            Toast.makeText(context, "Photo saved", Toast.LENGTH_SHORT).show()
+                            onPhotoTaken(filePath)
                         }
 
                         override fun onError(exception: ImageCaptureException) {
@@ -113,45 +110,4 @@ fun CameraView(
                 .padding(16.dp)
         )
     }
-}
-
-/**
- * General-purpose camera button with an icon, styled like the official app.
- */
-@Composable
-fun CameraButton(
-    onClick: () -> Unit,
-    icon: ImageVector,
-    contentDescription: String,
-    modifier: Modifier = Modifier
-) {
-    Box(
-        modifier = modifier
-            .size(48.dp)
-            .clip(CircleShape)
-            .background(Color.White)
-            .clickable(onClick = onClick),
-        contentAlignment = Alignment.Center
-    ) {
-        Icon(
-            imageVector = icon,
-            contentDescription = contentDescription,
-            tint = Color.Black
-        )
-    }
-}
-
-/**
- * Capture button styled as a large white circle with a black border.
- */
-@Composable
-fun CaptureButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
-    Box(
-        modifier = modifier
-            .size(80.dp)
-            .clip(CircleShape)
-            .background(Color.White)
-            .border(2.dp, Color.Black, CircleShape)
-            .clickable(onClick = onClick)
-    )
 }

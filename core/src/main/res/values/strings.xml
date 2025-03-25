@@ -14,7 +14,7 @@
     <string name="lets_go">Let\'s go</string>
 
     <!-- Welcome Screen -->
-    <string name="welcome_text">Welcome to Foodies\nLet\'s find out more about you :)</string>
+    <string name="welcome_text">Welcome\nto\nFoodies</string>
 
     <!-- Name Screen -->
     <string name="whats_your_name">What is your name?</string>
@@ -58,6 +58,11 @@
     <!--                                             HOME/JOURNAL                                             -->
     <!-- ==================================================================================================== -->
 
+    <!-- Camera -->
+    <string name="preview_posted_message">Posted with comment:</string>
+    <string name="preview_add_comment">Add a comment</string>
+
+    <!-- Journal -->
     <string name="previous_day">Previous day</string>
     <string name="next_day">Next day</string>
     <string name="yesterday">Yesterday</string>
@@ -83,6 +88,21 @@
     <string name="carbs">Carbs</string>
     <string name="protein">Protein</string>
     <string name="fat">Fat</string>
+
+    <!-- Profil -->
+    <string name="profil_title_age">Age</string>
+    <string name="profil_title_gender">Gender</string>
+    <string name="profil_title_height">Height</string>
+    <string name="profil_title_weight">Weight</string>
+    <string name="profil_title_goal">Goal</string>
+    <string name="profil_title_activity">Activity</string>
+    <string name="profil_title_carbs">Carbs</string>
+    <string name="profil_title_protein">Protein</string>
+    <string name="profil_title_fat">Fat</string>
+    <string name="profil_title_infos">About me</string>
+    <string name="profil_title_nutrients">Nutrient Ratio</string>
+    <string name="profil_title_nodata">No User Data.</string>
+
 
     <!-- ==================================================================================================== -->
     <!--                                                ERRORS                                              -->

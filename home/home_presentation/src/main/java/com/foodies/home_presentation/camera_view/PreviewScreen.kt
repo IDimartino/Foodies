@@ -31,6 +31,8 @@ fun PreviewScreen(
     var comment by remember { mutableStateOf("") }
     val context = LocalContext.current
 
+    val messsage = stringResource(com.foodies.core.R.string.preview_posted_message)
+
     Column(
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -47,13 +49,13 @@ fun PreviewScreen(
         TextField(
             value = comment,
             onValueChange = { comment = it },
-            label = { Text("Add a comment") },
+            label = { Text(stringResource(com.foodies.core.R.string.preview_add_comment)) },
             modifier = Modifier.fillMaxWidth()
         )
         // Post button
         Button(
             onClick = {
-                Toast.makeText(context, "Posted with comment: $comment", Toast.LENGTH_SHORT).show()
+                Toast.makeText(context, "$messsage $comment", Toast.LENGTH_SHORT).show()
             },
             modifier = Modifier.padding(16.dp)
         ) {

@@ -1,7 +1,6 @@
 package com.foodies.home_presentation.camera_view
 
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -21,8 +20,6 @@ fun CameraScreen(
         modifier = Modifier
             .padding(top = spacing.spaceExtraLarge)
     ) {
-        CameraView(onPhotoTaken, {
-
-        })
+        CameraView(onPhotoTaken) {}
     }
 }
