@@ -1,0 +1,108 @@
+<resources>
+    <string name="app_name">Foodies</string>
+
+    <!-- Bottom Navigation -->
+    <string name="feed">Feed</string>
+    <string name="photo">Share!</string>
+    <string name="tracker">Journal</string>
+    <string name="profile">Profile</string>
+
+    <!-- Buttons -->
+    <string name="start">Start</string>
+    <string name="next">Next</string>
+    <string name="share">Share!</string>
+    <string name="lets_go">Let\'s go</string>
+
+    <!-- Welcome Screen -->
+    <string name="welcome_text">Welcome to Foodies\nLet\'s find out more about you :)</string>
+
+    <!-- Name Screen -->
+    <string name="whats_your_name">What is your name?</string>
+
+    <!-- Gender Screen -->
+    <string name="whats_your_gender">What is your gender?</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+
+    <!-- Age Screen -->
+    <string name="whats_your_age">What\'s your age?</string>
+
+    <!-- Height Screen -->
+    <string name="whats_your_height">What\'s your height?</string>
+    <string name="cm">cm</string>
+
+    <!-- Weight Screen -->
+    <string name="whats_your_weight">What\'s your weight?</string>
+    <string name="kg">kg</string>
+
+    <!-- Activity Screen -->
+    <string name="whats_your_activity_level">What\'s your activity level?</string>
+    <string name="high">High</string>
+    <string name="medium">Medium</string>
+    <string name="low">Low</string>
+
+    <!-- Goal Screen -->
+    <string name="lose_keep_or_gain_weight">Do you want to lose, keep or gain weight?</string>
+    <string name="gain">Gain</string>
+    <string name="keep">Keep</string>
+    <string name="lose">Lose</string>
+    <string name="your_goal">Your goal:</string>
+
+    <!-- Nutrient Goal Screen -->
+    <string name="what_are_your_nutrient_goals">What are your nutrient goals?</string>
+    <string name="percent_proteins">% proteins</string>
+    <string name="percent_fats">% fats</string>
+    <string name="percent_carbs">% carbs</string>
+
+    <!-- ==================================================================================================== -->
+    <!--                                             HOME/JOURNAL                                             -->
+    <!-- ==================================================================================================== -->
+
+    <string name="previous_day">Previous day</string>
+    <string name="next_day">Next day</string>
+    <string name="yesterday">Yesterday</string>
+    <string name="tomorrow">Tomorrow</string>
+    <string name="today">Today</string>
+    <string name="recent">Recent</string>
+
+    <string name="nutrient_info">%dg • %dkcal</string>
+    <string name="amount_info">%dg</string>
+    <string name="grams">g</string>
+    <string name="extend">Extend</string>
+    <string name="collapse">Collapse</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="dinner">Dinner</string>
+    <string name="snacks">Snacks</string>
+    <string name="add_meal">Add %s</string>
+    <string name="add">Add</string>
+    <string name="search">Search…</string>
+    <string name="kcal_per_100g">%dkcal / 100g</string>
+
+    <string name="kcal">kcal</string>
+    <string name="carbs">Carbs</string>
+    <string name="protein">Protein</string>
+    <string name="fat">Fat</string>
+
+    <!-- ==================================================================================================== -->
+    <!--                                                ERRORS                                              -->
+    <!-- ==================================================================================================== -->
+    <!-- General Errors -->
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_something_went_wrong">Oops, something went wrong!</string>
+    <string name="no_results">No results</string>
+    <string name="error_invalid_values">These are not valid values</string>
+
+    <!-- Validation Errors -->
+    <string name="error_age_cant_be_empty">The age can\'t be empty</string>
+    <string name="error_height_cant_be_empty">The height can\'t be empty</string>
+    <string name="error_weight_cant_be_empty">The weight can\'t be empty</string>
+    <string name="error_not_100_percent">The values must add up to 100%</string>
+
+    <!-- ==================================================================================================== -->
+    <!--                                      MISCELLANEOUS/GENERAL                                           -->
+    <!-- ==================================================================================================== -->
+    <string name="years">years</string>
+    <string name="track">Track</string>
+    <string name="delete">Delete</string>
+</resources>
